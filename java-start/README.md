@@ -38,3 +38,4 @@
 ### 조건문
 
 - if문1 - if, else
+- if문2 - else if
