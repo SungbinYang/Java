@@ -53,3 +53,4 @@
 - while문2
 - do-while문
 - break, continue
+- for문1
