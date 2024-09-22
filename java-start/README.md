@@ -41,3 +41,4 @@
 - if문2 - else if
 - if문3 - if문과 else if문
 - switch문
+- 삼항 연산자
