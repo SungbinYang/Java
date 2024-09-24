@@ -72,3 +72,4 @@
 ### 훈련
 
 - Scanner 학습
+- Scanner - 기본 예제
