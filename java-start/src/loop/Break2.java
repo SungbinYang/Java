@@ -5,7 +5,7 @@ public class Break2 {
         int sum = 0;
         int i = 1;
 
-        for (;;) {
+        for (; ; ) {
             sum += i;
 
             if (sum > 10) {
