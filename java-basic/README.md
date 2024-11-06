@@ -24,3 +24,4 @@
 - 참조형과 메서드 호출 - 활용
 - 변수와 초기화
 - null
+- NullPointerException
