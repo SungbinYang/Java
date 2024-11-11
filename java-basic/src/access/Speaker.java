@@ -7,7 +7,7 @@ public class Speaker {
         this.volume = volume;
     }
 
-    void volumeUp() {
+    public void volumeUp() {
         if (volume >= 100) {
             System.out.println("음량을 증가할 수 없습니다. 최대음량이다.");
         } else {
@@ -16,12 +16,12 @@ public class Speaker {
         }
     }
 
-    void volumeDown() {
+    public void volumeDown() {
         volume -= 10;
         System.out.println("volumeDown 호출");
     }
 
-    void showVolume() {
+    public void showVolume() {
         System.out.println("현재 음량: " + volume);
     }
 }
