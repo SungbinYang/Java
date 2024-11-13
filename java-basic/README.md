@@ -78,3 +78,4 @@
 - static 변수3
 - static 메서드1
 - static 메서드2
+- static 메서드3
