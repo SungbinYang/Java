@@ -75,3 +75,4 @@
 - 스택 영역과 힙 영역
 - static 변수1
 - static 변수2
+- static 변수3

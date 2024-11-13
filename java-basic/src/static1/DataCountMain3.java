@@ -10,5 +10,10 @@ public class DataCountMain3 {
 
         Data3 data3 = new Data3("C");
         System.out.println("C count = " + Data3.count);
+
+        Data3 data4 = new Data3("D");
+        System.out.println("D count = " + data4.count);
+
+        System.out.println(Data3.count);
     }
 }
