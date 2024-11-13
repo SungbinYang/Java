@@ -77,3 +77,4 @@
 - static 변수2
 - static 변수3
 - static 메서드1
+- static 메서드2
