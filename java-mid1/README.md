@@ -14,3 +14,4 @@
 - toString()
 - Object와 OCP
 - equals() - 1. 동일성과 동등성
+- equals() - 2. 구현
