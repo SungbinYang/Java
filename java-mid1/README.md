@@ -12,3 +12,4 @@
 - Object 다형성
 - Object 배열
 - toString()
+- Object와 OCP
