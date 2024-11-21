@@ -13,3 +13,4 @@
 - Object 배열
 - toString()
 - Object와 OCP
+- equals() - 1. 동일성과 동등성
