@@ -35,3 +35,4 @@
 - String 클래스 - 불변 객체
 - String 클래스 - 주요 메서드1
 - String 클래스 - 주요 메서드2
+- StringBuilder - 가변 String
