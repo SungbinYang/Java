@@ -51,3 +51,4 @@
 - 래퍼 클래스 - 주요 메서드와 성능
 - Class 클래스
 - System 클래스
+- Math, Random 클래스
