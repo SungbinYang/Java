@@ -11,12 +11,14 @@ public class LottoGenerator {
 
         for (int i = 0; i < 6; i++) {
             int number = random.nextInt(45) + 1;
-            for (int j = 0; j < 6; j++) {
-                if (numbers[j] != number) {
-                    numbers[i] = number;
+
+            for (int j = 0; j < i; j++) {
+                if (numbers[j] == number) {
                     break;
                 }
             }
+
+            numbers[i] = number;
         }
 
         for (int number : numbers) {
