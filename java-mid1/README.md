@@ -76,3 +76,4 @@
 - 자바 날짜와 시간 라이브러리 소개
 - 기본 날짜와 시간 - LocalDateTime
 - 타임존 - ZonedDateTime
+- 기계 중심의 시간 - Instant
