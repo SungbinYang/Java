@@ -83,3 +83,4 @@
 - 직접 구현하는 Set3 - 직접 만든 객체 보관
 - equals, hashCode의 중요성1
 - equals, hashCode의 중요성2
+- 직접 구현하는 Set4 - 제네릭과 인터페이스 도입
