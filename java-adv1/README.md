@@ -34,3 +34,4 @@
 - join - 필요한 상황
 - join - sleep 사용
 - join - join 사용
+- join - 특정 시간 만큼만 대기
