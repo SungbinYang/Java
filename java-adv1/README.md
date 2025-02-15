@@ -35,3 +35,4 @@
 - join - sleep 사용
 - join - join 사용
 - join - 특정 시간 만큼만 대기
+- 문제와 풀이
