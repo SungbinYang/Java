@@ -33,3 +33,4 @@
 - join - 시작
 - join - 필요한 상황
 - join - sleep 사용
+- join - join 사용
