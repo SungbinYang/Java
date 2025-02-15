@@ -32,3 +32,4 @@
 - 체크 예외 재정의
 - join - 시작
 - join - 필요한 상황
+- join - sleep 사용
