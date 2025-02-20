@@ -20,7 +20,7 @@ public class ThreadStopMainV1 {
 
         @Override
         public void run() {
-            if (runFlag) {
+            while (runFlag) {
                 log("작업 중");
                 sleep(3000);
             }
