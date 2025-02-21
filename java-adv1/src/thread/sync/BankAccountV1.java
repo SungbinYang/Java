@@ -6,6 +6,7 @@ import static util.ThreadUtils.sleep;
 public class BankAccountV1 implements BankAccount {
 
     private int balance;
+//    volatile private int balance;
 
     public BankAccountV1(int initialBalance) {
         this.balance = initialBalance;
@@ -23,12 +24,11 @@ public class BankAccountV1 implements BankAccount {
         }
 
         log("[검증 완료] 출금액: " + amount + ", 잔액: " + balance);
-
         sleep(1000);
 
         balance -= amount;
-        log("[출금 완료] 출금액: " + amount + ", 잔액: " + balance);
 
+        log("[출금 완료] 출금액: " + amount + ", 잔액: " + balance);
         log("거래 종료");
 
         return true;

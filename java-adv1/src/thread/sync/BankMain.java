@@ -14,11 +14,13 @@ public class BankMain {
         t2.start();
 
         sleep(500);
+
         log("t1 state: " + t1.getState());
         log("t2 state: " + t2.getState());
 
         t1.join();
         t2.join();
+
         log("최종 잔액: " + account.getBalance());
     }
 }
