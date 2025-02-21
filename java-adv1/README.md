@@ -65,3 +65,4 @@
 - 동시성 문제
 - 임계 영역
 - synchronized 메서드
+- synchronized 코드 블럭
