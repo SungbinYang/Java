@@ -87,3 +87,4 @@
 - 생산자 소비자 문제 - 예제2 코드
 - 생산자 소비자 문제 - 예제2 분석
 - Object - wait, notify - 예제3 코드
+- Object - wait, notify - 예제3 분석 - 생산자 우선
