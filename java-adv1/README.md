@@ -89,3 +89,4 @@
 - Object - wait, notify - 예제3 코드
 - Object - wait, notify - 예제3 분석 - 생산자 우선
 - Object - wait, notify - 예제3 분석 - 소비자 우선
+- Object - wait, notify - 한계
