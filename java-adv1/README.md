@@ -91,3 +91,7 @@
 - Object - wait, notify - 예제3 분석 - 소비자 우선
 - Object - wait, notify - 한계
 - 정리
+
+## 생산자 소비자 문제2
+
+- Lock Condition - 예제4
