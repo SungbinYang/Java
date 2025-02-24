@@ -133,3 +133,4 @@
 - 스레드를 직접 사용할 때의 문제점
 - Executor 프레임워크 소개
 - ExecutorService 코드로 시작하기
+- Runnable의 불편함
