@@ -144,3 +144,7 @@
 - ExecutorService - 작업 컬렉션 처리
 - 문제와 풀이
 - 정리
+
+## 스레드 풀과 Executor 프레임워크2
+
+- ExecutorService 우아한 종료 - 소개
