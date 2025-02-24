@@ -140,3 +140,4 @@
 - Future4 - 이유
 - Future5 - 정리
 - Future6 - 취소
+- Future7 - 예외
