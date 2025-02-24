@@ -139,3 +139,4 @@
 - Future3 - 활용
 - Future4 - 이유
 - Future5 - 정리
+- Future6 - 취소
