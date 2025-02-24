@@ -151,3 +151,4 @@
 - ExecutorService 우아한 종료 - 구현
 - Executor 스레드 풀 관리 - 코드
 - Executor 스레드 풀 관리 - 분석
+- Executor 전략 - 고정 풀 전략
