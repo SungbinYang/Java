@@ -32,3 +32,4 @@
 - 문자 다루기1 - 시작
 - 문자 다루기2 - 스트림을 문자로
 - 문자 다루기3 - Reader, Writer
+- 문자 다루기4 - BufferedReader
