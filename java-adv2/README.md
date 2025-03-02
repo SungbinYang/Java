@@ -50,3 +50,4 @@
 - File
 - Files
 - 경로 표시
+- Files로 문자 파일 읽기
