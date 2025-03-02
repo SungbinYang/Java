@@ -61,3 +61,4 @@
 - IP(인터넷 프로토콜)
 - TCP, UDP
 - PORT
+- DNS
