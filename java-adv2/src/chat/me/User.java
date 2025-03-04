@@ -1,4 +1,4 @@
-package network.chat.me;
+package chat.me;
 
 public class User {
 

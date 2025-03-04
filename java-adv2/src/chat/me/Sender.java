@@ -1,4 +1,4 @@
-package network.chat.me;
+package chat.me;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -47,6 +47,7 @@ public class Sender implements Runnable {
         } catch (IOException e) {
             log(e);
         } finally {
+            scanner.close();
             close();
         }
     }

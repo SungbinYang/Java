@@ -1,4 +1,4 @@
-package network.chat.me;
+package chat.me;
 
 import java.util.ArrayList;
 import java.util.List;

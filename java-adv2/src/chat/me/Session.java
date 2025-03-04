@@ -1,4 +1,4 @@
-package network.chat.me;
+package chat.me;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -42,6 +42,7 @@ public class Session implements Runnable {
 
                 if (received.startsWith("/join")) {
                     String username = received.split("/")[1].split("\\|")[1];
+
                     String message = username + "님이 입장하셨습니다.";
                     user.setName(username);
                     log(message);
