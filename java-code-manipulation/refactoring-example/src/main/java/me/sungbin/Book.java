@@ -1,11 +1,13 @@
 package me.sungbin;
 
+@MyAnnotation
 public class Book {
 
     private static String B = "Book";
 
     private static final String C = "Book";
 
+    @AnotherAnnotation
     private String a = "a";
 
     public String d = "d";
@@ -15,12 +17,14 @@ public class Book {
     public Book() {
     }
 
+    @AnotherAnnotation
     public Book(String a, String d, String e) {
         this.a = a;
         this.d = d;
         this.e = e;
     }
 
+    @AnotherAnnotation
     public void f() {
         System.out.println("F");
     }
