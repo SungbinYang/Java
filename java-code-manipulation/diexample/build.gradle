@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'maven-publish'
 }
 
 group = 'me.sungbin'
@@ -8,17 +7,11 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
+    mavenLocal()
 }
 
 dependencies {
+    implementation 'me.sungbin:refactoring-example:1.0-SNAPSHOT'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
