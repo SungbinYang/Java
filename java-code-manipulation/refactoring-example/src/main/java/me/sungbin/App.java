@@ -1,54 +1,34 @@
 package me.sungbin;
 
-import java.lang.reflect.Modifier;
-import java.util.Arrays;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class App {
-    public static void main(String[] args) throws ClassNotFoundException {
-        Class<Book> bookClass = Book.class;
-        Book book = new Book();
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
+        Class<?> bookClass = Class.forName("me.sungbin.Book");
+        Constructor<?> constructor = bookClass.getConstructor(String.class);
+        Book book = (Book) constructor.newInstance("myBook");
+        System.out.println(book);
 
-        Arrays.stream(bookClass.getDeclaredFields()).forEach(f -> {
-            try {
-                f.setAccessible(true);
-                System.out.printf("%s %s\n", f, f.get(book));
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        });
+        Field a = Book.class.getDeclaredField("A");
+        System.out.println(a.get(null));
+        a.set(null, "AAAAAA");
+        System.out.println(a.get(null));
 
-        Arrays.stream(bookClass.getDeclaredMethods()).forEach(System.out::println);
+        Field b = Book.class.getDeclaredField("b");
+        b.setAccessible(true);
+        System.out.println(b.get(book));
+        b.set(book, "BBBBB");
+        System.out.println(b.get(book));
 
-        Arrays.stream(bookClass.getDeclaredConstructors()).forEach(System.out::println);
+        Method c = Book.class.getDeclaredMethod("c");
+        c.setAccessible(true);
+        c.invoke(book);
 
-        Arrays.stream(MyBook.class.getInterfaces()).forEach(System.out::println);
-
-        System.out.println(MyBook.class.getSuperclass());
-
-        Arrays.stream(Book.class.getDeclaredFields()).forEach(f -> {
-            int modifiers = f.getModifiers();
-            System.out.println(f);
-            System.out.println(Modifier.isPrivate(modifiers));
-            System.out.println(Modifier.isStatic(modifiers));
-        });
-
-        Arrays.stream(Book.class.getMethods()).forEach(m -> {
-            int modifiers = m.getModifiers();
-        });
-
-        Arrays.stream(Book.class.getAnnotations()).forEach(System.out::println);
-
-        Arrays.stream(MyBook.class.getAnnotations()).forEach(System.out::println);
-
-        Arrays.stream(MyBook.class.getDeclaredAnnotations()).forEach(System.out::println);
-
-        Arrays.stream(Book.class.getDeclaredFields()).forEach(f -> {
-            Arrays.stream(f.getAnnotations()).forEach(a -> {
-                if (a instanceof AnotherAnnotation anotherAnnotation) {
-                    System.out.println(anotherAnnotation.value());
-                    System.out.println(anotherAnnotation.number());
-                }
-            });
-        });
+        Method d = Book.class.getDeclaredMethod("sum", int.class, int.class);
+        int invoke = (int) d.invoke(book, 1, 2);
+        System.out.println(invoke);
     }
 }
