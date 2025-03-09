@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group = 'me.sungbin'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'net.bytebuddy:byte-buddy:1.17.2'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Index': true,
+                'Manifest-Version': '1.0',
+                'Class-Path': configurations.runtimeClasspath.files.collect { it.name }.join(' '),
+                'Mode': 'development',
+                'Url': project.findProperty('url') ?: '',
+                'Key': 'value',
+                'Premain-Class': 'me.sungbin.MasulsaAgent',
+                'Can-Redefine-Classes': true,
+                'Can-Retransform-Classes': true
+        )
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
