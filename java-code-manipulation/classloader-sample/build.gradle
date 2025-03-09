@@ -1,9 +1,15 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
 
 group = 'me.sungbin'
 version = '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
 
 repositories {
     mavenCentral()
@@ -14,6 +20,39 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
+jacoco {
+    toolVersion = '0.8.12' // Java 21과 호환되는 버전
+}
+
 test {
     useJUnitPlatform()
+    jacoco {
+        enabled = true
+    }
+    finalizedBy jacocoTestReport
 }
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        csv.required = false
+        html.required = true
+    }
+    finalizedBy jacocoTestCoverageVerification
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            element = 'PACKAGE'
+            limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+                minimum = 0.50
+            }
+        }
+    }
+}
+
+check.dependsOn jacocoTestCoverageVerification
