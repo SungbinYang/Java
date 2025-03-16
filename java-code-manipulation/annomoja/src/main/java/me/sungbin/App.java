@@ -2,8 +2,7 @@ package me.sungbin;
 
 public class App {
     public static void main(String[] args) {
-//        Moja moja = new MagicMoja();
-//        System.out.println(moja.pullOut());
-        System.out.println("dd");
+        Moja magicMoja = new MagicMoja();
+        System.out.println(magicMoja.pullOut());
     }
 }
