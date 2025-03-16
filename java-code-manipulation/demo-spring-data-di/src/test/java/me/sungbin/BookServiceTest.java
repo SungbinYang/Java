@@ -1,27 +1,21 @@
 package me.sungbin;
 
-import net.sf.cglib.proxy.Enhancer;
-import net.sf.cglib.proxy.MethodInterceptor;
-import net.sf.cglib.proxy.MethodProxy;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Method;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class BookServiceTest {
 
 
     @Test
     void di() {
-        MethodInterceptor handler = new MethodInterceptor() {
-            BookService bookService = new BookService();
-
-            @Override
-            public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-                return method.invoke(bookService, objects);
-            }
-        };
-
-        BookService bookService = (BookService) Enhancer.create(BookService.class, handler);
+        BookRepository bookRepository = mock(BookRepository.class);
+        Book hibernateBook = new Book();
+        hibernateBook.setTitle("hibernate");
+        when(bookRepository.save(any())).thenReturn(hibernateBook);
+        BookService bookService = new BookService(bookRepository);
 
         Book book = new Book();
         book.setTitle("spring");
