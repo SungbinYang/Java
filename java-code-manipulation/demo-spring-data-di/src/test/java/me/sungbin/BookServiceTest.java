@@ -1,32 +1,28 @@
 package me.sungbin;
 
+import net.sf.cglib.proxy.Enhancer;
+import net.sf.cglib.proxy.MethodInterceptor;
+import net.sf.cglib.proxy.MethodProxy;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 
 class BookServiceTest {
 
-    BookService bookService = (BookService) Proxy.newProxyInstance(BookService.class.getClassLoader(), new Class[]{BookService.class},
-            new InvocationHandler() {
-                BookService bookService = new DefaultBookService();
-
-                @Override
-                public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                    if (method.getName().equals("rent")) {
-                        System.out.println("aaaaa");
-                        Object invoke = method.invoke(bookService, args);
-                        System.out.println("bbbbb");
-                        return invoke;
-                    }
-
-                    return method.invoke(bookService, args);
-                }
-            });
 
     @Test
     void di() {
+        MethodInterceptor handler = new MethodInterceptor() {
+            BookService bookService = new BookService();
+
+            @Override
+            public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+                return method.invoke(bookService, objects);
+            }
+        };
+
+        BookService bookService = (BookService) Enhancer.create(BookService.class, handler);
+
         Book book = new Book();
         book.setTitle("spring");
         bookService.rent(book);
